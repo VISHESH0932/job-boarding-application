@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id          Int           @id @default(autoincrement())
+  title       String
+  department  String
+  location    String
+  description String        @db.Text
+  postingDate DateTime      @default(now())
+  applications Application[]
+}
+
+model Application {
+  id          Int      @id @default(autoincrement())
+  fullName    String
+  email       String
+  phone       String
+  resumePath  String
+  coverLetter String?  @db.Text
+  appliedAt   DateTime @default(now())
+  status      Status   @default(PENDING)
+  jobId       Int
+  job         Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([email, jobId], name: "unique_application_per_job")
+}
+
+enum Status {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
