@@ -47,9 +47,9 @@ This is a complete job board application built with a modern tech stack, allowin
 
 ## Project Structure
 
- backend/ # Node.js + Express + Prisma
- frontend/ # Next.js + React
- README.md
+ - backend/ # Node.js + Express + Prisma
+ - frontend/ # Next.js + React
+ - README.md
 ## Setup and Installation
 
 ### Prerequisites
