@@ -80,20 +80,20 @@ const ApplicationForm = ({ jobId }: ApplicationFormProps) => {
         <form onSubmit={handleSubmit} className="space-y-4">
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name *</label>
-                <input type="text" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required minLength={2} maxLength={32} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name <span className="text-red-500">*</span></label>
+                <input type="text" id="fullName" value={fullName} onChange={(e) => setFullName(e.target.value)} required minLength={2} maxLength={32} className="mt-3 block w-full  h-8 px-2 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address *</label>
-                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address <span className="text-red-500">*</span></label>
+                <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="mt-3 block w-full h-8 px-2 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number *</label>
-                <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number <span className="text-red-500">*</span></label>
+                <input type="tel" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required className="mt-3 block w-full h-8 px-2 py-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <div>
                 <label htmlFor="coverLetter" className="block text-sm font-medium text-gray-700">Cover Letter</label>
-                <textarea id="coverLetter" value={coverLetter} onChange={(e) => setCoverLetter(e.target.value)} rows={4} className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                <textarea id="coverLetter" value={coverLetter} onChange={(e) => setCoverLetter(e.target.value)} rows={4} className="mt-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
             </div>
             <div>
                 <label htmlFor="resume-upload" className="block text-sm font-medium text-gray-700">Resume (PDF only) *</label>

@@ -42,7 +42,7 @@ export const getJobById = async (req: Request, res: Response): Promise<void> => 
   }
 };
 
-export const applyForJob = async (req: Request, res: Response): Promise<void> => {
+export const applyForJob = async (req: Request, res: Response): Promise<void> => { 
   const { id } = req.params;
   const { fullName, email, phone, coverLetter } = req.body;
 
